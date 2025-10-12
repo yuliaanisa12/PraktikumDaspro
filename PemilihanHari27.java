@@ -1,31 +1,28 @@
 import java.util.Scanner;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class PemilihanHari27 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String dayName, dayType;
+        System.out.println("masukkan angka hari 1-7");
+        int dayNumber = sc.nextInt();
 
-        System.out.println("input day name");
-        dayName = sc.nextLine();
+        String dayType;
 
-        switch (dayName.toLowerCase()) {
-            case "monday":
-            case "tuesday":
-            case "wednesday":
-            case "thursday":
-            case "friday":
-                dayType = "weekday";
-                break;
-            case "saturday":
-            case "sunday":
-                dayType = "weekend";
-                break;
-            default:
-                dayType = "invalid day name";
-                break;
+        if (dayNumber >= 1 && dayNumber <= 5) {
+            dayType = "Weekday";
+
+        } else if (dayNumber == 6 || dayNumber == 7) {
+            dayType = "Weekend";
+
+        } else {
+            dayType = "Invalid Number";
         }
-        System.out.println(dayName + " is a " + dayType);
+
+        System.out.println("Hari ke-" + dayNumber + " adalah " + dayType);
+
         sc.close();
     }
 }
