@@ -9,8 +9,10 @@ public class CetakKRS27 {
         boolean uktlunas = sc.nextBoolean();
 
         if (uktlunas) {
-            System.out.println("Pembayaran UKT terverifikasi");
-            System.out.println("silakan cetak KRS dan minta tanda tangan");
+            System.out.println("Cetak KRS");
+        } else {
+            System.out.println("Registrasi ditolak. Silakan lunasi UKT terlebih dahulu.");
         }
+        sc.close();
     }
 }
