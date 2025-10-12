@@ -8,10 +8,11 @@ public class CetakKRS27 {
         System.out.println("apakah ukt sudah lunas? (true/false): ");
         boolean uktlunas = sc.nextBoolean();
 
-        String pesan = uktlunas ? "Cetak KRS" : "Registrasi ditolak. Silakan lunasi UKT terlebih dahulu.";
-
-        System.out.println(pesan);
-
+        if (uktlunas) {
+            System.out.println("Cetak KRS");
+        } else {
+            System.out.println("Registrasi ditolak. Silakan lunasi UKT terlebih dahulu");
+        }
         sc.close();
     }
 }
