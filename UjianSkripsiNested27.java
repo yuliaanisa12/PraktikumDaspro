@@ -1,45 +1,42 @@
 import java.util.Scanner;
 
 public class UjianSkripsiNested27 {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         String pesan;
-        String bebasKompen;
-        int bimbinganP1;
-        int bimbinganP2;
 
         System.out.print("Apakah mahasiswa sudah bebas kompen? (Ya/Tidak): ");
-        bebasKompen = sc.nextLine().trim();
+        String bebasKompen = sc.nextLine().trim();
 
         System.out.print("Masukkan jumlah log bimbingan Pembimbing 1: ");
-        bimbinganP1 = sc.nextInt();
-
+        int bimbinganP1 = sc.nextInt();
         System.out.print("Masukkan jumlah log bimbingan Pembimbing 2: ");
-        bimbinganP2 = sc.nextInt();
-        sc.nextLine();
+        int bimbinganP2 = sc.nextInt();
 
-        if (bebasKompen.equalsIgnoreCase("ya")) {
+        if (bebasKompen.equalsIgnoreCase("Ya")) {
 
-            if (bimbinganP1 >= 8 && bimbinganP2 >= 4) {
+            pesan = "Lulus syarat terpenuhi. Mahasiswa boleh mendaftar ujian skripsi";
 
-                pesan = "semua syarat terpenuhi, mahasiswa boleh daftar ujian skripsi";
-            } else if (bimbinganP1 < 8 && bimbinganP2 < 4) {
+            if (bimbinganP1 < 8 && bimbinganP2 < 4) {
 
-                pesan = "Gagal! Log bimbingan P1 belum mencapai 8 kali dan P2 belum mencapai 4 kali!";
-
+                pesan = "Gagal! log bimbingan P1 kurang dari 8 kali dan P2 kurang dari 4 kali";
             } else if (bimbinganP1 < 8) {
 
-                pesan = "Gagal! Log bimbingan P1 belum mencapai 8 kali!";
-            } else {
-                pesan = "Gagal! Log bimbingan P2 belum mencapai 4 kali!";
+                pesan = "Gagal! log bimbingan P1 belum mencapai 8 kali";
+            } else if (bimbinganP2 < 4) {
+
+                pesan = "Gagal! log bimbingan P2 belum mencapai 4 kali";
             }
+
         } else {
-            pesan = "Gagal! Mahasiswa masih memiliki tanggungan kompen!";
+
+            pesan = "Gagal! Mahasiswa masih memiliki tanggungan kompen";
         }
 
-        System.out.println("------------------------------------------");
-        System.out.println("Hasil: " + pesan);
+        System.out.println(pesan);
         sc.close();
     }
 }
